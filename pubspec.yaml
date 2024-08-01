@@ -12,6 +12,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # 实用程序包
+  http: ^1.1.0
+  intl: ^0.18.1
+  logger: ^2.0.1
+  url_launcher: ^6.1.12
+  # 原生的启动屏幕
+  flutter_native_splash: ^2.3.2
+  smooth_page_indicator: ^1.1.0
 
   # 图标
   iconsax: ^0.0.8
@@ -19,6 +27,7 @@ dependencies:
 
   # 状态管理
   get: ^4.6.5
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -31,8 +40,8 @@ flutter:
 
   #------------本地资产------------#
   assets:
-    - assets/images/
-    - assets/icons/brands
+    - assets/images/on_boarding_images/
+    - assets/icons/brands/
     - assets/logos/
 
   fonts:

@@ -1,7 +1,11 @@
 // 导入Material设计的包，包含构建用户界面所需的基础组件
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 // 导入自定义主题配置文件，用于统一管理应用的视觉风格
 import 'package:online_business/utils/theme/theme.dart';
+
+import 'features/authentication/screens/onboarding/onboarding.dart';
 
 /// App 类，表示整个应用程序的入口组件。
 ///
@@ -19,13 +23,16 @@ class App extends StatelessWidget {
   ///         负责管理路由、主题等全局设置。
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       // 设置主题模式跟随系统
       themeMode: ThemeMode.system,
       // 应用的亮色主题样式
       theme: NAppTheme.lightTheme,
       // 应用的暗色主题样式（此处示例中与亮色主题相同，根据需求可调整）
       darkTheme: NAppTheme.darkTheme,
+
+      home: const OnBoardingScreen(),
     );
   }
 }

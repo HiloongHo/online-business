@@ -1,0 +1,23 @@
+# 配置Flutter应用的启动画面，包括颜色和图标
+flutter_native_splash:
+  # 应用启动时的背景颜色（全平台通用）
+  color: "#FFFFFF"
+  # 应用启动时的背景颜色（暗黑模式）
+  color_dark: "#272727"
+  # 应用启动时的图标路径（全平台通用）
+  image: assets/logos/shopping_cart_40dp.png
+  # 应用启动时的图标路径（暗黑模式）
+  image_dark: assets/logos/shopping_cart_40dp.png
+  # Android 12及以上版本的特定配置
+  android_12:
+    # Android 12及以上版本的启动画面背景颜色
+    color: "#FFFFFF"
+    # Android 12及以上版本的启动画面背景颜色（暗黑模式）
+    color_dark: "#272727"
+    # Android 12及以上版本的启动画面图标路径
+    image: assets/logos/shopping_cart_40dp.png
+    # Android 12及以上版本的启动画面图标路径（暗黑模式）
+    image_dark: assets/logos/shopping_cart_40dp.png
+
+  # 是否在Web平台上启用原生启动画面
+  web: false
