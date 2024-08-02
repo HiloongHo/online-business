@@ -51,6 +51,9 @@ class NSizes {
   /// 按钮阴影高度常量。
   static const double buttonElevation = 4.0;
 
+  /// 默认的圆角半径常量。
+  static const double appBarHeight = 56.0;
+
   /// 图片缩略图尺寸常量。
   static const double imageThumbSize = 80.0;
 
@@ -88,7 +91,7 @@ class NSizes {
   static const double inputFieldRadius = 12.0;
 
   /// 输入框之间间距常量。
-  static const double spaceBtwInputField = 16.0;
+  static const double spaceBtwInputFields = 16.0;
 
   /// 大卡片圆角半径常量。
   static const double cardRadiusLg = 16.0;

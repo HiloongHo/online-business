@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../screens/login/login.dart';
+
 /// 引导页控制器，用于管理引导页的页面切换逻辑
 class OnBoardingController extends GetxController {
   // 单例模式获取控制器实例
@@ -27,7 +29,7 @@ class OnBoardingController extends GetxController {
   void nextPage() {
     if (currentPageIndex.value == 2) {
       // 切换到登录页面
-      // Get.to(LoginScreen);
+      Get.offAll(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
