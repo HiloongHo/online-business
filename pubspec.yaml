@@ -43,6 +43,7 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/icons/brands/
     - assets/logos/
+    - assets/logos/shopping-logo.png
 
   fonts:
     - family: Poppins

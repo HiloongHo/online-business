@@ -37,6 +37,6 @@ class OnBoardingController extends GetxController {
   /// 跳过当前页，直接跳转到最后一页
   void skipPage() {
     currentPageIndex.value = 2;
-    pageController.jumpTo(2);
+    pageController.jumpToPage(2);
   }
 }
