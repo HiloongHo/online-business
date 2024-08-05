@@ -17,6 +17,7 @@ dependencies:
   intl: ^0.18.1
   logger: ^2.0.1
   url_launcher: ^6.1.12
+  carousel_slider: ^4.2.1
   # 原生的启动屏幕
   flutter_native_splash: ^2.3.2
   smooth_page_indicator: ^1.1.0
@@ -41,9 +42,13 @@ flutter:
   #------------本地资产------------#
   assets:
     - assets/images/on_boarding_images/
-    - assets/icons/brands/
-    - assets/logos/
     - assets/images/animations/
+    - assets/images/banners/
+    - assets/icons/brands/
+    - assets/icons/categories/
+    - assets/logos/
+
+
 
   fonts:
     - family: Poppins

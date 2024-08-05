@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:online_business/features/shop/screens/home/widgets/home.dart';
+import 'package:online_business/features/shop/screens/home/home.dart';
 import 'package:online_business/utils/constants/colors.dart';
 import 'package:online_business/utils/helpers/helper_functions.dart';
 

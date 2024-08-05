@@ -24,12 +24,13 @@ class NTexts {
   static const String onBoardingSubtitle3 = "享受我们的送货上门服务，无需担心重物搬运或时间安排。\n\n"
       "无论是工作日还是周末，我们都会按照您的要求准时送达。";
 
-  // 主页应用栏的标题，旨在提供一个愉快的购物祝愿。
-  static const String homeAppbarTitle = "购物愉快";
+  // 主页应用栏的标题，旨在提供一个愉快的购物体验和祝愿。
+  static const String homeAppbarTitle = "欢迎光临，祝您购物愉快！";
 
-  // 主页应用栏的子标题，留空以突出主要标题。
-  static const String homeAppbarSubtitle = "";
+  // 主页应用栏的子标题，可以用来显示促销信息或特色活动。
+  static const String homeAppbarSubtitle = "今日特惠，不容错过！";
 
+  // 用户信息相关的静态常量，用于表单字段的标签。
   static const String firstName = "名字";
   static const String lastName = "姓氏";
   static const String email = "电子邮箱";
@@ -54,14 +55,17 @@ class NTexts {
   static const String submit = "提交";
   static const String done = "完成";
 
+  // 登录、注册和忘记密码页面的标题和子标题。
   static const String loginTitle = "欢迎回来！";
   static const String loginSubtitle = "请输入您的账号和密码";
   static const String signUpTitle = "创建账户";
   static const String forgotPasswordTitle = "忘记密码？";
   static const String forgotPasswordSubtitle = "请输入您的邮箱，我们将发送重置链接";
   static const String changePasswordTitle = "更改密码";
-static const String changePasswordSubtitle = "请设置您的新密码。为了账户安全，请确保新密码强度足够。建议使用包含大写字母、小写字母、数字和特殊字符的组合。避免使用容易被猜测的个人信息，如生日或姓名。请务必记住您的新密码，以免将来再次忘记。";
+  // 密码变更页面的子标题，提供密码设置的建议。
+  static const String changePasswordSubtitle = "请设置您的新密码。为了账户安全，请确保新密码强度足够。建议使用包含大写字母、小写字母、数字和特殊字符的组合。避免使用容易被猜测的个人信息，如生日或姓名。请务必记住您的新密码，以免将来再次忘记。";
 
+  // 邮箱验证相关的标题和子标题。
   static const String confirmEmail = "验证您的邮箱！";
   static const String confirmEmailSubtitle = "我们已向您提供的电子邮箱地址发送了一封确认邮件。\n"
       "请登录您的邮箱并点击邮件中的链接以完成账户激活过程。\n"
@@ -69,7 +73,10 @@ static const String changePasswordSubtitle = "请设置您的新密码。为了�
       "或者稍后再检查，有时邮件送达可能需要几分钟的时间。\n"
       "一旦您确认了您的邮箱，您将能够完整地访问我们的服务。\n"
       "感谢您的耐心等待，期待您的加入！";
+  // 提示用户检查垃圾邮件文件夹的信息。
   static const String emailNotReceivedMessage = "如果您没有收到邮件，请检查垃圾邮件文件夹";
+  // 账户创建成功的提示信息。
   static const String yourAccountCreatedTitle = "恭喜！您的账户已创建";
   static const String yourAccountCreatedSubtitle = "现在您可以使用您的账号登录了";
+
 }

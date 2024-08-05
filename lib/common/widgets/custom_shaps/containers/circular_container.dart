@@ -5,7 +5,7 @@ import '../../../../utils/constants/colors.dart';
 /// TCircularContainer类是一个预定义的圆形容器组件。
 /// 它扩展了StatelessWidget，并允许通过参数自定义容器的宽度、高度、圆角、内边距和背景颜色。
 /// 主要用途是创建一个具有圆形外观的通用容器，可以包含其他小部件。
-class TCircularContainer extends StatelessWidget {
+class NCircularContainer extends StatelessWidget {
   /// 构造函数用于初始化TCircularContainer组件。
   /// 参数：
   /// - width: 容器的宽度，默认值为400。
@@ -14,7 +14,7 @@ class TCircularContainer extends StatelessWidget {
   /// - padding: 容器内部的填充，默认值为0，意味着没有内边距。
   /// - child: 容器内部包含的小部件，可以为null。
   /// - backgroundColor: 容器的背景颜色，默认值为白色。
-  const TCircularContainer({
+  const NCircularContainer({
     this.width = 400,
     this.height = 400,
     this.radius = 400,
@@ -22,12 +22,14 @@ class TCircularContainer extends StatelessWidget {
     this.child,
     this.backgroundColor = NColors.white,
     super.key,
+    this.margin,
   });
 
   /// 宽度、高度、圆角半径和背景颜色的属性，用于自定义容器的外观。
   final double? width, height, radius, padding;
   final Widget? child;
   final Color? backgroundColor;
+  final EdgeInsets? margin;
 
   /// 重写build方法以构建Widget树。
   /// 使用Container小部件并根据提供的参数自定义其属性，如宽度、高度、圆角、内边距和背景颜色。
@@ -37,6 +39,7 @@ class TCircularContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      margin: margin,
       padding: EdgeInsets.all(padding!),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius!), color: backgroundColor),
