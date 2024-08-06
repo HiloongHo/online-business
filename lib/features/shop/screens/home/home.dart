@@ -5,6 +5,7 @@ import 'package:online_business/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/custom_shaps/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shaps/containers/search_container.dart';
+import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import 'widgets/home_appbar.dart';
@@ -20,13 +21,13 @@ class HomeScreen extends StatelessWidget {
     // 使用 Scaffold 构建基本页面结构
     // 通过 SingleChildScrollView 提供垂直滚动功能
     // Column 组件用于布局页面元素
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             // 顶部容器，设置背景色和内边距
             // 使用 Stack 布局来叠加多个圆形容器，以实现特定的视觉效果
-            NPrimaryHeaderContainer(
+            const NPrimaryHeaderContainer(
               child: Column(
                 children: [
                   NHomeAppBar(),
@@ -59,17 +60,28 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(NSizes.defaultSpace),
+              padding: const EdgeInsets.all(NSizes.defaultSpace),
               child: Column(
                 children: [
-                  NPromoSlider(
+                  const NPromoSlider(
                     banners: [
                       NImages.banner1,
                       NImages.banner2,
                       NImages.banner3
                     ],
                   ),
-                  NProductCardVertical()
+                  const SizedBox(
+                    height: NSizes.spaceBtwSections,
+                  ),
+
+                   NSectionHeading(title: "热门产品", onPressed: (){},),
+                  const SizedBox(
+                    height: NSizes.spaceBtwItems,
+                  ),
+                  NGridLayout(
+                    itemCount: 14,
+                    itemBuilder: (_, index) => const NProductCardVertical(),
+                  )
                 ],
               ),
             )

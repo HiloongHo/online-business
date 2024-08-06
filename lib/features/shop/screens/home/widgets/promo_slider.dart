@@ -5,7 +5,7 @@ import 'package:online_business/features/shop/controllers/home_controller.dart';
 import 'package:online_business/utils/constants/colors.dart';
 
 import '../../../../../common/widgets/custom_shaps/containers/circular_container.dart';
-import '../../../../../common/widgets/images/n_rounded_images.dart';
+import '../../../../../common/widgets/images/n_rounded_image.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 /// 广告轮播组件

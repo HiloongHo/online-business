@@ -13,7 +13,7 @@ class NSectionHeading extends StatelessWidget {
   const NSectionHeading({
     super.key,
     this.textColor,
-    this.showActionButton = false,
+    this.showActionButton = true,
     required this.title,
     this.buttonTitle = "查看全部",
     this.onPressed,
@@ -37,6 +37,7 @@ class NSectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           title,

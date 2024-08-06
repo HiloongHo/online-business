@@ -5,6 +5,8 @@ import 'package:online_business/features/shop/screens/home/home.dart';
 import 'package:online_business/utils/constants/colors.dart';
 import 'package:online_business/utils/helpers/helper_functions.dart';
 
+import 'features/shop/screens/store/store.dart';
+
 /// 导航菜单组件，用于应用的底部导航
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -24,8 +26,10 @@ class NavigationMenu extends StatelessWidget {
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
-          backgroundColor: darkMode? NColors.black : NColors.white,
-          indicatorColor: darkMode? NColors.white.withOpacity(0.1) : NColors.black.withOpacity(0.1),
+          backgroundColor: darkMode ? NColors.black : NColors.white,
+          indicatorColor: darkMode
+              ? NColors.white.withOpacity(0.1)
+              : NColors.black.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: "首页"),
             NavigationDestination(icon: Icon(Iconsax.shop), label: "商城"),
@@ -48,9 +52,7 @@ class NavigationController extends GetxController {
   // 定义每个导航项对应的页面
   final screens = [
     const HomeScreen(),
-    Container(
-      color: Colors.green,
-    ),
+    const StoreScreen(),
     Container(
       color: Colors.blue,
     ),

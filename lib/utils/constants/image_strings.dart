@@ -48,4 +48,25 @@ class NImages {
   static const String banner1 = "assets/images/banners/banner-1.jpg";
   static const String banner2 = "assets/images/banners/banner-2.jpg";
   static const String banner3 = "assets/images/banners/banner-3.jpg";
+
+  static const String productImage1 ="assets/images/products/bedroom_bat.jpg";
+  static const String productImage2 ="assets/images/products/bedroom_bed_1.jpg";
+  static const String productImage3 ="assets/images/products/bedroom_bed_2.jpg";
+  static const String productImage4 ="assets/images/products/bedroom_bed_3.jpg";
+  static const String productImage5 ="assets/images/products/bedroom_bed_4.jpg";
+  static const String productImage6 ="assets/images/products/football_shoes.jpg";
+  static const String productImage7 ="assets/images/products/iphone_1.jpg";
+  static const String productImage8 ="assets/images/products/iphone_2.jpg";
+  static const String productImage9 ="assets/images/products/iphone_3.jpg";
+  static const String productImage10 ="assets/images/products/iphone_4.jpg";
+  static const String productImage11 ="assets/images/products/iphone_5.jpg";
+  static const String productImage12 ="assets/images/products/iphone_6.jpg";
+  static const String productImage13 ="assets/images/products/laptop_1.jpg";
+  static const String productImage14 ="assets/images/products/laptop_2.jpg";
+  static const String productImage15 ="assets/images/products/laptop_3.jpg";
+  static const String productImage16 ="assets/images/products/laptop_4.jpg";
+  static const String productImage17 ="";
+  static const String productImage18 ="";
+  static const String productImage19 ="";
+  static const String productImage20="";
 }

@@ -6,13 +6,14 @@ import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
-/// A widget for creating a search container.
+/// 创建搜索容器的小部件。
 ///
-/// [text]: The text displayed inside the search container.
-/// [icon]: The icon displayed in front of the text (currently not used in the build method).
-/// [showBackground]: Whether to display a background color.
-/// [showBorder]: Whether to display a border.
-/// [onTap]: The callback function triggered when the container is tapped.
+/// [text]: 显示在搜索容器内的文本。
+/// [icon]: 显示在文本前的图标（当前在构建方法中未使用）。
+/// [showBackground]: 是否显示背景颜色。
+/// [showBorder]: 是否显示边框。
+/// [onTap]: 容器被点击时触发的回调函数。
+/// [padding]: 内容与容器边缘的距离，默认为左右两侧各`NSizes.defaultSpace`。
 class NSearchContainer extends StatelessWidget {
   const NSearchContainer({
     super.key,
@@ -21,21 +22,24 @@ class NSearchContainer extends StatelessWidget {
     this.showBackground = true,
     this.showBorder = true,
     this.onTap,
+    this.padding = const EdgeInsets.symmetric(horizontal: NSizes.defaultSpace),
   });
 
   final String? text;
   final IconData? icon;
   final bool showBackground, showBorder;
   final VoidCallback? onTap;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
-    // Determine if the current mode is dark mode.
+    // 确定当前是否为深色模式。
     final dark = NHelperFunctions.isDarkMode(context);
+
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: NSizes.defaultSpace),
+        padding: padding,
         child: Container(
           width: NDeviceUtility.getScreenWidth(context),
           padding: const EdgeInsets.all(NSizes.md),
@@ -50,7 +54,7 @@ class NSearchContainer extends StatelessWidget {
           ),
           child: Row(
             children: [
-              // Display a search icon.
+              // 显示搜索图标。
               const Icon(
                 Iconsax.search_normal,
                 color: NColors.darkerGrey,
@@ -58,7 +62,7 @@ class NSearchContainer extends StatelessWidget {
               const SizedBox(
                 width: NSizes.spaceBtwItems,
               ),
-              // Display text, the text style adapts to the theme of the current context.
+              // 显示文本，文本样式根据当前上下文的主题进行适配。
               Text(
                 text!,
                 style: Theme.of(context).textTheme.bodySmall,

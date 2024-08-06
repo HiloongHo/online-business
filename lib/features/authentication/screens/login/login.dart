@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:online_business/common/styles/spacing_styles.dart';
 import 'package:online_business/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:online_business/features/authentication/screens/login/widgets/login_header.dart';
-import 'package:online_business/utils/constants/colors.dart';
-import 'package:online_business/utils/constants/image_strings.dart';
 import 'package:online_business/utils/constants/sizes.dart';
 import 'package:online_business/utils/constants/text_strings.dart';
 import 'package:online_business/utils/helpers/helper_functions.dart';
