@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:online_business/common/styles/shadows.dart';
 import 'package:online_business/common/widgets/custom_shaps/containers/rounded_container.dart';
@@ -9,6 +10,7 @@ import 'package:online_business/utils/constants/colors.dart';
 import 'package:online_business/utils/constants/image_strings.dart';
 import 'package:online_business/utils/helpers/helper_functions.dart';
 
+import '../../../../features/shop/screens/product_details/product_detail.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../icons/n_circlular_icon.dart';
 import '../../texts/product_price_text.dart';
@@ -23,7 +25,7 @@ class NProductCardVertical extends StatelessWidget {
     // 获取当前主题模式（暗黑或亮色）
     final dark = NHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetail()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),

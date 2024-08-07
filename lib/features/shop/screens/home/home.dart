@@ -55,6 +55,9 @@ class HomeScreen extends StatelessWidget {
                         NHomeCategories()
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    height: NSizes.spaceBtwSections,
                   )
                 ],
               ),
@@ -73,8 +76,10 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: NSizes.spaceBtwSections,
                   ),
-
-                   NSectionHeading(title: "热门产品", onPressed: (){},),
+                  NSectionHeading(
+                    title: "热门产品",
+                    onPressed: () {},
+                  ),
                   const SizedBox(
                     height: NSizes.spaceBtwItems,
                   ),

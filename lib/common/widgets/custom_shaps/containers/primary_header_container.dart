@@ -24,28 +24,25 @@ class NPrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: NColors.primary,
         padding: const EdgeInsets.only(bottom: 0),
-        child: SizedBox(
-          height: 400,
-          child: Stack(
-            children: <Widget>[
-              // 两个相同的透明圆形容器，通过调整透明度来实现视觉效果
-              Positioned(
-                top: 150,
-                right: -250,
-                child: NCircularContainer(
-                  backgroundColor: NColors.textWhite.withOpacity(0.1),
-                ),
+        child: Stack(
+          children: <Widget>[
+            // 两个相同的透明圆形容器，通过调整透明度来实现视觉效果
+            Positioned(
+              top: 150,
+              right: -250,
+              child: NCircularContainer(
+                backgroundColor: NColors.textWhite.withOpacity(0.1),
               ),
-              Positioned(
-                top: 100,
-                right: -200,
-                child: NCircularContainer(
-                  backgroundColor: NColors.textWhite.withOpacity(0.1),
-                ),
+            ),
+            Positioned(
+              top: 100,
+              right: -200,
+              child: NCircularContainer(
+                backgroundColor: NColors.textWhite.withOpacity(0.1),
               ),
-              child,
-            ],
-          ),
+            ),
+            child,
+          ],
         ),
       ),
     );

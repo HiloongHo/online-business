@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:online_business/features/shop/screens/home/home.dart';
+import 'package:online_business/features/shop/screens/wishlist/wishlist.dart';
 import 'package:online_business/utils/constants/colors.dart';
 import 'package:online_business/utils/helpers/helper_functions.dart';
 
+import 'features/personalization/screens/settings/settings.dart';
 import 'features/shop/screens/store/store.dart';
 
 /// 导航菜单组件，用于应用的底部导航
@@ -53,11 +55,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
-    Container(
-      color: Colors.blue,
-    ),
-    Container(
-      color: Colors.yellow,
-    ),
+    const FavoriteScreen(),
+    const SettingScreen(),
   ];
 }

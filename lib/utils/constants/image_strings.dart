@@ -69,4 +69,6 @@ class NImages {
   static const String productImage18 ="";
   static const String productImage19 ="";
   static const String productImage20="";
+
+  static const String user = "assets/images/user/user.png";
 }

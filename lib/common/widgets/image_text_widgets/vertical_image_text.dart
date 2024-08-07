@@ -19,7 +19,7 @@ class NVerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     this.textColor = NColors.white,
-    this.backgroundColor = NColors.white,
+    this.backgroundColor,
     this.onTap,
   });
 

@@ -12,7 +12,6 @@ import 'package:online_business/utils/constants/enums.dart';
 import 'package:online_business/utils/constants/sizes.dart';
 import 'package:online_business/utils/helpers/helper_functions.dart';
 
-import '../../../../common/widgets/brand/brand_show_case.dart';
 import '../../../../common/widgets/images/n_circular_image.dart';
 import '../../../../utils/constants/image_strings.dart';
 
