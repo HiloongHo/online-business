@@ -5,10 +5,12 @@ import 'package:online_business/common/widgets/appbar/appbar.dart';
 import 'package:online_business/common/widgets/custom_shaps/containers/primary_header_container.dart';
 import 'package:online_business/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:online_business/common/widgets/texts/section_heading.dart';
+import 'package:online_business/features/shop/screens/order/order.dart';
 import 'package:online_business/utils/constants/colors.dart';
 import 'package:online_business/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
+import '../address/address.dart';
 import '../profile/profile.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -54,7 +56,7 @@ class SettingScreen extends StatelessWidget {
                     icon: Iconsax.safe_home,
                     title: "我的地址",
                     subTile: "管理收货地址",
-                    onTap: () {},
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   NSettingMenuTile(
                     icon: Iconsax.shopping_cart,
@@ -66,7 +68,7 @@ class SettingScreen extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: "我的订单",
                     subTile: "查看订单状态",
-                    onTap: () {},
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   NSettingMenuTile(
                     icon: Iconsax.bank,

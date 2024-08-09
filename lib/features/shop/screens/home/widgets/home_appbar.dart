@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 // 导入自定义的AppBar组件
 import '../../../../../common/widgets/appbar/appbar.dart';
-// 导入购物车图标组件
-import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 // 导入颜色常量
 import '../../../../../utils/constants/colors.dart';
 // 导入文本字符串常量
 import '../../../../../utils/constants/text_strings.dart';
+import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 
 /// 定义一个NHomeAppBar类，用于在主页中显示自定义的AppBar。
 /// 它继承自StatelessWidget。
@@ -45,6 +44,8 @@ class NHomeAppBar extends StatelessWidget {
         NCartCounterIcon(
           onPressed: () {},
           iconColor: NColors.white,
+          counterBgColor: NColors.black,
+          counterTextColor: NColors.white,
         )
       ],
     );
