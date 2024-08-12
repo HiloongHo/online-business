@@ -78,7 +78,7 @@ class CheckoutScreen extends StatelessWidget {
                 image: NImages.successfulPayment,
                 title: "支付成功！",
                 subtitle: "您的货物即将送达",
-                onPressed: () => Get.off(() => NavigationMenu()))),
+                onPressed: () => Get.off(() => const NavigationMenu()))),
             child: const Text("总计 \$256.0")),
       ),
     );

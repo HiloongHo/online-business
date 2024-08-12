@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 // 导入自定义的颜色、图片字符串、尺寸常量和辅助函数
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 import '../custom_shaps/containers/rounded_container.dart';

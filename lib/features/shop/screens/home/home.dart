@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:online_business/features/shop/screens/all_products/all_products.dart';
 import 'package:online_business/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:online_business/utils/constants/image_strings.dart';
 import 'package:online_business/utils/constants/sizes.dart';
@@ -78,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   NSectionHeading(
                     title: "热门产品",
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProducts()),
                   ),
                   const SizedBox(
                     height: NSizes.spaceBtwItems,

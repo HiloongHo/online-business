@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_business/common/widgets/appbar/tabbar.dart';
 import 'package:online_business/common/widgets/custom_shaps/containers/rounded_container.dart';
 import 'package:online_business/common/widgets/custom_shaps/containers/search_container.dart';
@@ -14,6 +15,7 @@ import 'package:online_business/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/images/n_circular_image.dart';
 import '../../../../utils/constants/image_strings.dart';
+import '../brand/all_brands.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -29,10 +31,12 @@ class StoreScreen extends StatelessWidget {
             '商店',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          actions: [Padding(
-            padding: const EdgeInsets.only(right: NSizes.defaultSpace),
-            child: NCartCounterIcon(onPressed: () {}),
-          )],
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: NSizes.defaultSpace),
+              child: NCartCounterIcon(onPressed: () {}),
+            )
+          ],
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
@@ -65,7 +69,7 @@ class StoreScreen extends StatelessWidget {
                       ),
                       NSectionHeading(
                         title: "特色品牌",
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const AllBrandsScreen()),
                       ),
                       const SizedBox(
                         height: NSizes.spaceBtwItems / 1.5,

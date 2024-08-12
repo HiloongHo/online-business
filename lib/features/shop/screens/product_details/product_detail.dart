@@ -14,10 +14,10 @@ import '../product_reviews/product_reviews.dart';
 
 /// 产品详情页面
 ///
-/// [ProductDetail] 是一个 StatelessWidget，用于展示产品的详细信息。
+/// [ProductDetailScreen] 是一个 StatelessWidget，用于展示产品的详细信息。
 /// 它主要包含一个产品图片轮播组件。
-class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+class ProductDetailScreen extends StatelessWidget {
+  const ProductDetailScreen({super.key});
 
   /// 构建方法，用于生成 ProductDetail 页面的 UI。
   ///

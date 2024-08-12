@@ -25,7 +25,7 @@ class NProductCardVertical extends StatelessWidget {
     // 获取当前主题模式（暗黑或亮色）
     final dark = NHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetail()),
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
