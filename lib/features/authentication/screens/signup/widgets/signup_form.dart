@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:online_business/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:online_business/features/authentication/screens/signup/widgets/terms_and_condition_checkbox.dart';
+import 'package:online_business/utils/validators/validation.dart';
 
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -18,7 +20,9 @@ class NSignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
         child: Column(
           children: [
             // 姓氏和名字的输入字段
@@ -26,6 +30,8 @@ class NSignupForm extends StatelessWidget {
               // 姓氏输入字段
               Expanded(
                 child: TextFormField(
+                  validator: (value) => NValidation.validateEmptyText("Last name", value),
+                  controller: controller.lastName,
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: NTexts.lastName,
@@ -39,6 +45,8 @@ class NSignupForm extends StatelessWidget {
               // 名字输入字段
               Expanded(
                 child: TextFormField(
+                  validator: (value) => NValidation.validateEmptyText("First name", value),
+                  controller: controller.firstName,
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: NTexts.firstName,
@@ -52,6 +60,8 @@ class NSignupForm extends StatelessWidget {
             ),
             // 用户名输入字段
             TextFormField(
+              validator: (value) => NValidation.validateEmptyText("User name", value),
+              controller: controller.userName,
               expands: false,
               decoration: const InputDecoration(
                   labelText: NTexts.username,
@@ -62,6 +72,8 @@ class NSignupForm extends StatelessWidget {
             ),
             // 邮箱输入字段
             TextFormField(
+              validator: (value) => NValidation.validateEmail(value),
+              controller: controller.email,
               decoration: const InputDecoration(
                   labelText: NTexts.email,
                   prefixIcon: Icon(Iconsax.direct)),
@@ -71,6 +83,8 @@ class NSignupForm extends StatelessWidget {
             ),
             // 电话号码输入字段
             TextFormField(
+              validator: (value) => NValidation.validatePhoneNumber(value),
+              controller: controller.phoneNumber,
               decoration: const InputDecoration(
                   labelText: NTexts.phoneNo,
                   prefixIcon: Icon(Iconsax.call)),
@@ -80,6 +94,8 @@ class NSignupForm extends StatelessWidget {
             ),
             // 密码输入字段
             TextFormField(
+              validator: (value) => NValidation.validatePassword(value),
+              controller: controller.password,
               obscureText: true,
               decoration: const InputDecoration(
                 labelText: NTexts.password,
@@ -101,7 +117,7 @@ class NSignupForm extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: NColors.primary,
                 ),
-                onPressed: () => Get.to(() => const VerifyEmailScreen()),
+                onPressed: () => controller.signup(),
                 child: const Text(NTexts.createAccount),
               ),
             )

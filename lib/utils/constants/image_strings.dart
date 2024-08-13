@@ -123,4 +123,7 @@ class NImages {
   static const String visa = "assets/icons/payment_methods/icons8-visa-100.png";
 
   static const String successfulPayment = "assets/images/animations/social-contactless-payment-with-mobile-phone.gif";
+
+  static const String docerAnimation = "assets/images/animations/sammy-woman-on-skateboard-carrying-file-folders.gif";
+
 }

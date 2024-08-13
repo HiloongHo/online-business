@@ -1,6 +1,13 @@
 /// NValidation类用于实现常见的验证逻辑，如邮箱、密码和电话号码的验证。
 /// 它使用预编译的正则表达式来提高验证性能。
 class NValidation {
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '需要填写$fieldName';
+    }
+    return null;
+  }
+
   // 预编译正则表达式以提高性能
   static final emailRegExp = RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$');
   static final passwordSpecialCharactersRegExp =
