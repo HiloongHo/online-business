@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "885160095978",
+    "project_id": "onlinebusiness-30107",
+    "storage_bucket": "onlinebusiness-30107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885160095978:android:717b2875f29108abc62793",
+        "android_client_info": {
+          "package_name": "com.example.online_business"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885160095978-u41ek2k1topbaivja8dd48jnmhuje4fg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8dJZzjwXxTe_tFRLoxxGG_j8kcvvHPAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885160095978-u41ek2k1topbaivja8dd48jnmhuje4fg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885160095978-kd30tg6l4vs8ubap4mm4d3uthbjfvpgu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.onlineBusiness"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
