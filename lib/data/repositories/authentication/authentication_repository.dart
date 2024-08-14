@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ class AuthenticationRepository extends GetxController {
 
   // 使用GetStorage插件来存取设备上的数据。
   final deviceStorage = GetStorage();
+  final _auth = FirebaseAuth.instance;
 
   /// 当控制器准备好时调用的方法。
   /// 在这里，移除启动屏并调用screenRedirect方法以确定导航到哪个屏幕。
@@ -34,5 +36,13 @@ class AuthenticationRepository extends GetxController {
     deviceStorage.read("IsFirstTime") != true
         ? Get.offAll(() => const LoginScreen())
         : Get.offAll(const OnBoardingScreen());
+  }
+
+  Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
+    try {
+      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw "发生了错误，请稍后再试。";
+    }
   }
 }

@@ -1,6 +1,7 @@
 // 导入Material设计的包，包含构建用户界面所需的基础组件
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_business/bindings/general_bindings.dart';
 import 'package:online_business/utils/constants/colors.dart';
 
 // 导入自定义主题配置文件，用于统一管理应用的视觉风格
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
       theme: NAppTheme.lightTheme,
       // 应用的暗色主题样式（此处示例中与亮色主题相同，根据需求可调整）
       darkTheme: NAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
 
       home: const Scaffold(
         backgroundColor: NColors.primary,

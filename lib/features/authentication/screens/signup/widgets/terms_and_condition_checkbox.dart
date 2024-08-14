@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:online_business/features/authentication/controllers/signup/signup_controller.dart';
 
 // 导入自定义颜色常量
 import '../../../../../utils/constants/colors.dart';
+
 // 导入自定义尺寸常量
 import '../../../../../utils/constants/sizes.dart';
+
 // 导入自定义文本字符串常量
 import '../../../../../utils/constants/text_strings.dart';
+
 // 导入辅助函数
 import '../../../../../utils/helpers/helper_functions.dart';
 
@@ -17,6 +22,7 @@ class NTermsAndConditionCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = SignupController.instance;
     // 检查当前是否为深色模式
     final dark = NHelperFunctions.isDarkMode(context);
     return Row(
@@ -25,7 +31,9 @@ class NTermsAndConditionCheckbox extends StatelessWidget {
         SizedBox(
           width: 24,
           height: 24,
-          child: Checkbox(value: true, onChanged: (value) {}),
+          child: Obx(() => Checkbox(
+              value: controller.privacyPolicy.value,
+              onChanged: (value) => controller.privacyPolicy.value = !controller.privacyPolicy.value)),
         ),
         // 间隔空隙
         const SizedBox(
@@ -38,31 +46,18 @@ class NTermsAndConditionCheckbox extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall),
           TextSpan(
               text: NTexts.privacyPolicy,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .apply(
-                  color:
-                  dark ? NColors.white : NColors.primary,
+              style: Theme.of(context).textTheme.bodyMedium!.apply(
+                  color: dark ? NColors.white : NColors.primary,
                   decoration: TextDecoration.underline,
-                  decorationColor: dark
-                      ? NColors.white
-                      : NColors.primary)),
+                  decorationColor: dark ? NColors.white : NColors.primary)),
           TextSpan(
-              text: NTexts.and,
-              style: Theme.of(context).textTheme.bodySmall),
+              text: NTexts.and, style: Theme.of(context).textTheme.bodySmall),
           TextSpan(
               text: NTexts.termsOfService,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .apply(
-                  color:
-                  dark ? NColors.white : NColors.primary,
+              style: Theme.of(context).textTheme.bodyMedium!.apply(
+                  color: dark ? NColors.white : NColors.primary,
                   decoration: TextDecoration.underline,
-                  decorationColor: dark
-                      ? NColors.white
-                      : NColors.primary)),
+                  decorationColor: dark ? NColors.white : NColors.primary)),
         ]))
       ],
     );

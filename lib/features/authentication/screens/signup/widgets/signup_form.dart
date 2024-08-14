@@ -22,7 +22,7 @@ class NSignupForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
     return Form(
-      key: controller.signupFormKey,
+        key: controller.signupFormKey,
         child: Column(
           children: [
             // 姓氏和名字的输入字段
@@ -30,7 +30,8 @@ class NSignupForm extends StatelessWidget {
               // 姓氏输入字段
               Expanded(
                 child: TextFormField(
-                  validator: (value) => NValidation.validateEmptyText("Last name", value),
+                  validator: (value) =>
+                      NValidation.validateEmptyText("姓氏", value),
                   controller: controller.lastName,
                   expands: false,
                   decoration: const InputDecoration(
@@ -45,7 +46,8 @@ class NSignupForm extends StatelessWidget {
               // 名字输入字段
               Expanded(
                 child: TextFormField(
-                  validator: (value) => NValidation.validateEmptyText("First name", value),
+                  validator: (value) =>
+                      NValidation.validateEmptyText("名字", value),
                   controller: controller.firstName,
                   expands: false,
                   decoration: const InputDecoration(
@@ -60,7 +62,7 @@ class NSignupForm extends StatelessWidget {
             ),
             // 用户名输入字段
             TextFormField(
-              validator: (value) => NValidation.validateEmptyText("User name", value),
+              validator: (value) => NValidation.validateEmptyText("用户名", value),
               controller: controller.userName,
               expands: false,
               decoration: const InputDecoration(
@@ -75,8 +77,7 @@ class NSignupForm extends StatelessWidget {
               validator: (value) => NValidation.validateEmail(value),
               controller: controller.email,
               decoration: const InputDecoration(
-                  labelText: NTexts.email,
-                  prefixIcon: Icon(Iconsax.direct)),
+                  labelText: NTexts.email, prefixIcon: Icon(Iconsax.direct)),
             ),
             const SizedBox(
               height: NSizes.spaceBtwInputFields,
@@ -86,21 +87,27 @@ class NSignupForm extends StatelessWidget {
               validator: (value) => NValidation.validatePhoneNumber(value),
               controller: controller.phoneNumber,
               decoration: const InputDecoration(
-                  labelText: NTexts.phoneNo,
-                  prefixIcon: Icon(Iconsax.call)),
+                  labelText: NTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
             ),
             const SizedBox(
               height: NSizes.spaceBtwInputFields,
             ),
             // 密码输入字段
-            TextFormField(
-              validator: (value) => NValidation.validatePassword(value),
-              controller: controller.password,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: NTexts.password,
-                prefixIcon: Icon(Iconsax.password_check),
-                suffixIcon: Icon(Iconsax.eye_slash),
+            Obx(
+              () => TextFormField(
+                validator: (value) => NValidation.validatePassword(value),
+                controller: controller.password,
+                obscureText: controller.hidePassword.value,
+                decoration: InputDecoration(
+                  labelText: NTexts.password,
+                  prefixIcon: const Icon(Iconsax.password_check),
+                  suffixIcon: IconButton(
+                      onPressed: () => controller.hidePassword.value =
+                          !controller.hidePassword.value,
+                      icon: Icon(controller.hidePassword.value
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye)),
+                ),
               ),
             ),
             const SizedBox(
@@ -108,7 +115,9 @@ class NSignupForm extends StatelessWidget {
             ),
             // 服务条款复选框
             const NTermsAndConditionCheckbox(),
-            const SizedBox(height: NSizes.spaceBtwSections,),
+            const SizedBox(
+              height: NSizes.spaceBtwSections,
+            ),
 
             // 创建账户按钮
             SizedBox(

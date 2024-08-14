@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_business/data/repositories/authentication/authentication_repository.dart';
+import 'package:online_business/data/repositories/user/user_repositories.dart';
+import 'package:online_business/features/authentication/screens/signup/verify_email.dart';
 import 'package:online_business/utils/constants/image_strings.dart';
 import 'package:online_business/utils/popups/full_screen_loader.dart';
 import 'package:online_business/utils/popups/loaders.dart';
 import '../../../../utils/helpers/network_manager.dart';
+import '../../models/user_model.dart';
 
 /// [SignupController] 类负责处理用户注册过程中的表单验证和网络请求。
 class SignupController extends GetxController {
@@ -11,17 +15,26 @@ class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
   // 用于存储和验证用户输入的电子邮件地址。
+  final hidePassword = true.obs;
+  final privacyPolicy = true.obs;
+
   final email = TextEditingController();
+
   // 用于存储和验证用户输入的密码。
   final password = TextEditingController();
+
   // 用于存储和验证用户的姓氏。
   final lastName = TextEditingController();
+
   // 用于存储和验证用户的名。
   final firstName = TextEditingController();
+
   // 用于存储和验证用户的电话号码。
   final phoneNumber = TextEditingController();
+
   // 用于存储和验证用户的用户名。
   final userName = TextEditingController();
+
   // 全局Key，用于表单验证。
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
 
@@ -40,21 +53,41 @@ class SignupController extends GetxController {
 
       // 检查设备是否连接到网络。
       final isConnected = await NetWorkManager.instance.isConnected();
-      if (!isConnected) {
-        // 如果没有网络连接，停止加载对话框并返回。
-        NFullScreenLoader.stopLoading();
+      if (!isConnected) return;
+
+      // 验证表单数据。
+      if (!signupFormKey.currentState!.validate()) return;
+
+      if (!privacyPolicy.value) {
+        NLoaders.warningSnackBar(
+            title: "接受隐私政策", message: "为了创建账户，你必须阅读和接受隐私政策与服务条款。");
         return;
       }
 
-      // 验证表单数据。
-      if (!signupFormKey.currentState!.validate()) {
-        // 如果表单验证失败，停止加载对话框并返回。
-        NFullScreenLoader.stopLoading();
-        return;
-      }
+      final userCredential = await AuthenticationRepository.instance
+          .registerWithEmailAndPassword(
+              email.text.trim(), password.text.trim());
+
+      final newUser = UserModel(
+        id: userCredential.user!.uid,
+        email: email.text.trim(),
+        firstName: firstName.text.trim(),
+        lastName: lastName.text.trim(),
+        phoneNumber: phoneNumber.text.trim(),
+        userName: userName.text.trim(),
+        profilePicture: '',
+      );
+
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserRecord(newUser);
+      NFullScreenLoader.stopLoading();
+      NLoaders.successSnackBar(
+          title: "成功", message: "您的账户已创建成功，请前往邮箱验证。");
+      Get.to(() => const VerifyEmailScreen());
+
     } catch (e) {
       // 捕获异常，并显示错误信息。
-      NLoaders.errorSnackBar(title: "Oh Snap!", message: e.toString());
+      NLoaders.errorSnackBar(title: "糟糕!", message: e.toString());
     } finally {
       // 最终确保加载对话框被关闭。
       NFullScreenLoader.stopLoading();

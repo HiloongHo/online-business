@@ -44,4 +44,24 @@ class NLoaders {
           color: NColors.white,
         ));
   }
+
+  /// 显示成功型Snackbar。
+  ///
+  /// 参数:
+  /// - title: Snackbar的标题，必需。
+  /// - message: Snackbar的消息，默认为空字符串。
+  static successSnackBar({required String title, String message = ""}) {
+    Get.snackbar(title, message,
+        isDismissible: true,
+        shouldIconPulse: true,
+        colorText: NColors.white,
+        backgroundColor: Colors.green.shade600,
+        snackPosition: SnackPosition.BOTTOM,
+        duration: const Duration(seconds: 3),
+        margin: const EdgeInsets.all(20),
+        icon:  const Icon(
+          Iconsax.chart_success,
+          color: NColors.white,
+        ));
+  }
 }
